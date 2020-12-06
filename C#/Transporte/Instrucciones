@@ -1,0 +1,8 @@
+INSTRUCCIONES PARA PROBAR EL PROGRAMA:
+1-Descargue y ejecute (en Windows) el archivo Instalación.msi.
+2-Siga las instrucciones de instalación pero guarde la ubicación del programa.
+3-Abra el archivo "transporte.sql" en MySQL Workbench y ejecutelo para crear la base de datos.
+4-Tras crear la base, en la carpeta del programa, abra "E2_Transporte" en un editor de texto.
+6-En la línea 10, tras "connectionString", cambie "xxx" en User y en Password por el nombre de usuario
+  y la contraseña que usa en su sesión de MySQL. Si lo necesita, también cambie el nombre del servidor.
+7-Ejecute el programa (Admin_transporte). Debe tener un acceso directo en el escritorio.
