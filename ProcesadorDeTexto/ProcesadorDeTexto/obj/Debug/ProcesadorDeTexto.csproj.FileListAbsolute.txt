@@ -1,0 +1,10 @@
+C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.exe.config
+C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.exe
+C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.pdb
+C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.Form1.resources
+C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.Properties.Resources.resources
+C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.GenerateResource.cache
+C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.CoreCompileInputs.cache
+C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.exe
+C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.pdb
+C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csprojAssemblyReference.cache
