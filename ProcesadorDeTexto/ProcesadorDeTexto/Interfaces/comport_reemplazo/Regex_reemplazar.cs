@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace ProcesadorDeTexto.Interfaces.comport_reemplazo

@@ -52,7 +52,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\comport_busqueda\Buscar_cadena.cs" />
-    <Compile Include="Interfaces\comport_busqueda\Buscar_número.cs" />
+    <Compile Include="Interfaces\comport_busqueda\Buscar_columna.cs" />
     <Compile Include="Interfaces\comport_busqueda\I_Comport_busqueda.cs" />
     <Compile Include="Interfaces\comport_escritura\Borrar.cs" />
     <Compile Include="Interfaces\comport_escritura\Insertar_antes.cs" />
@@ -62,10 +62,15 @@
     <Compile Include="Interfaces\comport_escritura\I_Comport_escritura.cs" />
     <Compile Include="Interfaces\comport_lectura\Leer_Cadena.cs" />
     <Compile Include="Interfaces\comport_lectura\Leer_Contador.cs" />
+    <Compile Include="Interfaces\comport_lectura\Leer_Lista.cs" />
     <Compile Include="Interfaces\comport_reemplazo\I_Comport_reemplazo.cs" />
     <Compile Include="Interfaces\comport_reemplazo\Quitar_Poner.cs" />
     <Compile Include="Interfaces\comport_reemplazo\Reemplazar.cs" />
     <Compile Include="Interfaces\comport_reemplazo\Regex_reemplazar.cs" />
+    <Compile Include="Interfaces\comport_remocion\I_Comport_remocion.cs" />
+    <Compile Include="Interfaces\comport_remocion\No_remover.cs" />
+    <Compile Include="Interfaces\comport_remocion\Remover_antes.cs" />
+    <Compile Include="Interfaces\comport_remocion\Remover_despues.cs" />
     <Compile Include="Procesador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

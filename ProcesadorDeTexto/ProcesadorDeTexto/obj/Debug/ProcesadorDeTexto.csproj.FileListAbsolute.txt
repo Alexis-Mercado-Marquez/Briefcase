@@ -8,3 +8,33 @@ C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\
 C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.exe
 C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.pdb
 C:\Users\Acel Guilts\source\repos\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csprojAssemblyReference.cache
+C:\DATA\EXPORTACION\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.exe.config
+C:\DATA\EXPORTACION\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.exe
+C:\DATA\EXPORTACION\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.pdb
+C:\DATA\EXPORTACION\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csprojAssemblyReference.cache
+C:\DATA\EXPORTACION\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.Form1.resources
+C:\DATA\EXPORTACION\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.Properties.Resources.resources
+C:\DATA\EXPORTACION\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.GenerateResource.cache
+C:\DATA\EXPORTACION\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.CoreCompileInputs.cache
+C:\DATA\EXPORTACION\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.exe
+C:\DATA\EXPORTACION\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.pdb
+C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.exe.config
+C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.exe
+C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.pdb
+C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.Form1.resources
+C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.Properties.Resources.resources
+C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.GenerateResource.cache
+C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.CoreCompileInputs.cache
+C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.exe
+C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.pdb
+C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csprojAssemblyReference.cache
+C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.exe.config
+C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.exe
+C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.pdb
+C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csprojAssemblyReference.cache
+C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.Form1.resources
+C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.Properties.Resources.resources
+C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.GenerateResource.cache
+C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.CoreCompileInputs.cache
+C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.exe
+C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.pdb
