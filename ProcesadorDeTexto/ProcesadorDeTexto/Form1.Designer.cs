@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tab_reemplazo = new System.Windows.Forms.TabControl();
@@ -59,10 +60,12 @@
             this.cb_AditionalAction = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.A_CB_Ultima = new System.Windows.Forms.CheckBox();
             this.A_NDD_Columna = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.A_CB_Remove = new System.Windows.Forms.CheckBox();
             this.A_CB_Mayus = new System.Windows.Forms.CheckBox();
             this.A_CB_Cadenas = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -75,13 +78,17 @@
             this.cb_Explain = new System.Windows.Forms.ComboBox();
             this.tab_parrafo = new System.Windows.Forms.TabControl();
             this.tabPageA = new System.Windows.Forms.TabPage();
+            this.A_lb_column = new System.Windows.Forms.Label();
+            this.A_btn_paste = new System.Windows.Forms.Button();
             this.A_btn_B = new System.Windows.Forms.Button();
             this.A_btn_clear = new System.Windows.Forms.Button();
             this.tabPageB = new System.Windows.Forms.TabPage();
             this.B_btn_A = new System.Windows.Forms.Button();
             this.B_btn_copy = new System.Windows.Forms.Button();
             this.B_btn_clean = new System.Windows.Forms.Button();
-            this.A_btn_paste = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.A_NDD_Rango = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
             this.tab_reemplazo.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -96,6 +103,7 @@
             this.tab_parrafo.SuspendLayout();
             this.tabPageA.SuspendLayout();
             this.tabPageB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.A_NDD_Rango)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -113,9 +121,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 13);
+            this.label2.Size = new System.Drawing.Size(199, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Escoja que texto se debe buscar";
+            this.label2.Text = "Escoja que texto se buscará en cada fila";
             // 
             // tab_reemplazo
             // 
@@ -128,7 +136,6 @@
             this.tab_reemplazo.Size = new System.Drawing.Size(315, 96);
             this.tab_reemplazo.TabIndex = 4;
             this.tab_reemplazo.Selected += new System.Windows.Forms.TabControlEventHandler(this.tab_reemplazo_Selected);
-            this.tab_reemplazo.TabIndexChanged += new System.EventHandler(this.tab_reemplazo_TabIndexChanged);
             // 
             // tabPage4
             // 
@@ -206,12 +213,12 @@
             // 
             this.B_NDD_Inicio.Location = new System.Drawing.Point(11, 29);
             this.B_NDD_Inicio.Maximum = new decimal(new int[] {
-            1000,
+            100000,
             0,
             0,
             0});
             this.B_NDD_Inicio.Minimum = new decimal(new int[] {
-            1000,
+            100000,
             0,
             0,
             -2147483648});
@@ -241,7 +248,6 @@
             this.B_CB_Replace.TabIndex = 7;
             this.B_CB_Replace.Text = "Reemplazar una sola línea";
             this.B_CB_Replace.UseVisualStyleBackColor = true;
-            this.B_CB_Replace.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // B_BTN_Upload
             // 
@@ -262,7 +268,6 @@
             this.label13.Size = new System.Drawing.Size(263, 26);
             this.label13.TabIndex = 4;
             this.label13.Text = "Pegue la lista de valores (separados por línea) o suba \r\nun archivo de texto.";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // btn_upload
             // 
@@ -282,9 +287,10 @@
             this.textBox1.Location = new System.Drawing.Point(6, 6);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(580, 490);
+            this.textBox1.Size = new System.Drawing.Size(580, 509);
             this.textBox1.TabIndex = 6;
             this.textBox1.WordWrap = false;
+            this.textBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseDown);
             // 
             // textBox2
             // 
@@ -294,7 +300,7 @@
             this.textBox2.Location = new System.Drawing.Point(6, 6);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(580, 490);
+            this.textBox2.Size = new System.Drawing.Size(580, 509);
             this.textBox2.TabIndex = 7;
             this.textBox2.WordWrap = false;
             // 
@@ -393,7 +399,7 @@
             this.panel1.Controls.Add(this.rdReplace);
             this.panel1.Controls.Add(this.rdInsertAfter);
             this.panel1.Controls.Add(this.tab_reemplazo);
-            this.panel1.Location = new System.Drawing.Point(8, 283);
+            this.panel1.Location = new System.Drawing.Point(8, 304);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(324, 282);
             this.panel1.TabIndex = 22;
@@ -406,6 +412,7 @@
             this.cb_AditionalAction2.FormattingEnabled = true;
             this.cb_AditionalAction2.Items.AddRange(new object[] {
             "Acción adicional",
+            "Combinar líneas",
             "Ordenar líneas (ascendente)",
             "Ordenar líneas (descendente)"});
             this.cb_AditionalAction2.Location = new System.Drawing.Point(156, 53);
@@ -438,35 +445,51 @@
             this.label3.TabIndex = 28;
             this.label3.Text = ".";
             this.label3.Visible = false;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage2.Controls.Add(this.label15);
+            this.tabPage2.Controls.Add(this.A_NDD_Rango);
+            this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.A_CB_Ultima);
             this.tabPage2.Controls.Add(this.A_NDD_Columna);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(316, 104);
+            this.tabPage2.Size = new System.Drawing.Size(316, 129);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Columnas x filas";
+            this.tabPage2.Text = "Columna";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(141, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(171, 39);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "El rango indica cuantos carácteres\r\nreemplazar o eliminar desde la co-\r\nlumna enc" +
+    "ontrada";
             // 
             // A_CB_Ultima
             // 
             this.A_CB_Ultima.AutoSize = true;
             this.A_CB_Ultima.Location = new System.Drawing.Point(144, 25);
             this.A_CB_Ultima.Name = "A_CB_Ultima";
-            this.A_CB_Ultima.Size = new System.Drawing.Size(132, 17);
+            this.A_CB_Ultima.Size = new System.Drawing.Size(136, 17);
             this.A_CB_Ultima.TabIndex = 2;
-            this.A_CB_Ultima.Text = "Usar la última columna";
+            this.A_CB_Ultima.Text = "Recorrer fila en reversa";
             this.A_CB_Ultima.UseVisualStyleBackColor = true;
-            this.A_CB_Ultima.CheckedChanged += new System.EventHandler(this.A_CB_Ultima_CheckedChanged);
             // 
             // A_NDD_Columna
             // 
             this.A_NDD_Columna.Location = new System.Drawing.Point(13, 24);
+            this.A_NDD_Columna.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.A_NDD_Columna.Minimum = new decimal(new int[] {
             1,
             0,
@@ -486,14 +509,14 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(10, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 13);
+            this.label6.Size = new System.Drawing.Size(102, 13);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Número de la columna";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.Text = "Número de columna";
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage1.Controls.Add(this.A_CB_Remove);
             this.tabPage1.Controls.Add(this.A_CB_Mayus);
             this.tabPage1.Controls.Add(this.A_CB_Cadenas);
             this.tabPage1.Controls.Add(this.label9);
@@ -502,20 +525,29 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(316, 104);
+            this.tabPage1.Size = new System.Drawing.Size(316, 129);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadena exacta";
+            // 
+            // A_CB_Remove
+            // 
+            this.A_CB_Remove.AutoSize = true;
+            this.A_CB_Remove.Location = new System.Drawing.Point(143, 63);
+            this.A_CB_Remove.Name = "A_CB_Remove";
+            this.A_CB_Remove.Size = new System.Drawing.Size(167, 17);
+            this.A_CB_Remove.TabIndex = 18;
+            this.A_CB_Remove.Text = "Eliminar filas sin coincidencias";
+            this.A_CB_Remove.UseVisualStyleBackColor = true;
             // 
             // A_CB_Mayus
             // 
             this.A_CB_Mayus.AutoSize = true;
-            this.A_CB_Mayus.Location = new System.Drawing.Point(174, 64);
+            this.A_CB_Mayus.Location = new System.Drawing.Point(142, 86);
             this.A_CB_Mayus.Name = "A_CB_Mayus";
-            this.A_CB_Mayus.Size = new System.Drawing.Size(127, 30);
+            this.A_CB_Mayus.Size = new System.Drawing.Size(163, 30);
             this.A_CB_Mayus.TabIndex = 17;
-            this.A_CB_Mayus.Text = "Distinguir mayúsculas\r\ny minúsculas";
+            this.A_CB_Mayus.Text = "Distinguir letras mayúsculas y\r\nminúsculas\r\n";
             this.A_CB_Mayus.UseVisualStyleBackColor = true;
-            this.A_CB_Mayus.CheckedChanged += new System.EventHandler(this.A_CB_Mayus_CheckedChanged);
             // 
             // A_CB_Cadenas
             // 
@@ -525,15 +557,15 @@
             this.A_CB_Cadenas.Items.AddRange(new object[] {
             "Todas",
             "Solo palabras completas"});
-            this.A_CB_Cadenas.Location = new System.Drawing.Point(8, 69);
+            this.A_CB_Cadenas.Location = new System.Drawing.Point(8, 80);
             this.A_CB_Cadenas.Name = "A_CB_Cadenas";
-            this.A_CB_Cadenas.Size = new System.Drawing.Size(150, 21);
+            this.A_CB_Cadenas.Size = new System.Drawing.Size(119, 21);
             this.A_CB_Cadenas.TabIndex = 16;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 53);
+            this.label9.Location = new System.Drawing.Point(9, 64);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(118, 13);
             this.label9.TabIndex = 15;
@@ -553,7 +585,7 @@
             this.A_TB_Cadena.BackColor = System.Drawing.SystemColors.ControlLight;
             this.A_TB_Cadena.Location = new System.Drawing.Point(6, 26);
             this.A_TB_Cadena.Name = "A_TB_Cadena";
-            this.A_TB_Cadena.Size = new System.Drawing.Size(294, 20);
+            this.A_TB_Cadena.Size = new System.Drawing.Size(299, 20);
             this.A_TB_Cadena.TabIndex = 0;
             // 
             // tab_reemplazable
@@ -563,7 +595,7 @@
             this.tab_reemplazable.Location = new System.Drawing.Point(8, 143);
             this.tab_reemplazable.Name = "tab_reemplazable";
             this.tab_reemplazable.SelectedIndex = 0;
-            this.tab_reemplazable.Size = new System.Drawing.Size(324, 130);
+            this.tab_reemplazable.Size = new System.Drawing.Size(324, 155);
             this.tab_reemplazable.TabIndex = 2;
             this.tab_reemplazable.Selected += new System.Windows.Forms.TabControlEventHandler(this.tab_reemplazable_Selected);
             // 
@@ -577,7 +609,6 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Lista de valores";
             this.label5.Visible = false;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // A_btn_clean
             // 
@@ -587,7 +618,7 @@
             this.A_btn_clean.Location = new System.Drawing.Point(947, 34);
             this.A_btn_clean.Multiline = true;
             this.A_btn_clean.Name = "A_btn_clean";
-            this.A_btn_clean.Size = new System.Drawing.Size(200, 527);
+            this.A_btn_clean.Size = new System.Drawing.Size(208, 548);
             this.A_btn_clean.TabIndex = 24;
             this.A_btn_clean.Visible = false;
             this.A_btn_clean.WordWrap = false;
@@ -610,7 +641,9 @@
             "Escoja lo que quiera saber...",
             "¿Qué hace este programa?",
             "Buscar texto (por cadena exacta)",
-            "Buscar texto (columnas x filas)",
+            "Buscar texto (por columna)",
+            "Buscar por cadena (avanzado)",
+            "Buscar por columna (avanzado)",
             "Acciones de los RadioButtons",
             "Acciones de los Selects",
             "Como insertar una cadena",
@@ -632,11 +665,12 @@
             this.tab_parrafo.Location = new System.Drawing.Point(338, 6);
             this.tab_parrafo.Name = "tab_parrafo";
             this.tab_parrafo.SelectedIndex = 0;
-            this.tab_parrafo.Size = new System.Drawing.Size(600, 559);
+            this.tab_parrafo.Size = new System.Drawing.Size(600, 580);
             this.tab_parrafo.TabIndex = 27;
             // 
             // tabPageA
             // 
+            this.tabPageA.Controls.Add(this.A_lb_column);
             this.tabPageA.Controls.Add(this.A_btn_paste);
             this.tabPageA.Controls.Add(this.A_btn_B);
             this.tabPageA.Controls.Add(this.label3);
@@ -645,15 +679,35 @@
             this.tabPageA.Location = new System.Drawing.Point(4, 22);
             this.tabPageA.Name = "tabPageA";
             this.tabPageA.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageA.Size = new System.Drawing.Size(592, 533);
+            this.tabPageA.Size = new System.Drawing.Size(592, 554);
             this.tabPageA.TabIndex = 0;
             this.tabPageA.Text = "Texto original";
             this.tabPageA.UseVisualStyleBackColor = true;
             // 
+            // A_lb_column
+            // 
+            this.A_lb_column.AutoSize = true;
+            this.A_lb_column.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.A_lb_column.Location = new System.Drawing.Point(248, 530);
+            this.A_lb_column.Name = "A_lb_column";
+            this.A_lb_column.Size = new System.Drawing.Size(63, 13);
+            this.A_lb_column.TabIndex = 31;
+            this.A_lb_column.Text = "Column: 0";
+            // 
+            // A_btn_paste
+            // 
+            this.A_btn_paste.Location = new System.Drawing.Point(77, 525);
+            this.A_btn_paste.Name = "A_btn_paste";
+            this.A_btn_paste.Size = new System.Drawing.Size(75, 23);
+            this.A_btn_paste.TabIndex = 30;
+            this.A_btn_paste.Text = "Pegar";
+            this.A_btn_paste.UseVisualStyleBackColor = true;
+            this.A_btn_paste.Click += new System.EventHandler(this.A_btn_paste_Click);
+            // 
             // A_btn_B
             // 
             this.A_btn_B.ForeColor = System.Drawing.Color.SkyBlue;
-            this.A_btn_B.Location = new System.Drawing.Point(6, 504);
+            this.A_btn_B.Location = new System.Drawing.Point(6, 525);
             this.A_btn_B.Name = "A_btn_B";
             this.A_btn_B.Size = new System.Drawing.Size(40, 23);
             this.A_btn_B.TabIndex = 29;
@@ -663,7 +717,7 @@
             // 
             // A_btn_clear
             // 
-            this.A_btn_clear.Location = new System.Drawing.Point(158, 504);
+            this.A_btn_clear.Location = new System.Drawing.Point(158, 525);
             this.A_btn_clear.Name = "A_btn_clear";
             this.A_btn_clear.Size = new System.Drawing.Size(75, 23);
             this.A_btn_clear.TabIndex = 7;
@@ -681,7 +735,7 @@
             this.tabPageB.Location = new System.Drawing.Point(4, 22);
             this.tabPageB.Name = "tabPageB";
             this.tabPageB.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageB.Size = new System.Drawing.Size(592, 533);
+            this.tabPageB.Size = new System.Drawing.Size(592, 554);
             this.tabPageB.TabIndex = 1;
             this.tabPageB.Text = "Texto modificado";
             this.tabPageB.UseVisualStyleBackColor = true;
@@ -689,7 +743,7 @@
             // B_btn_A
             // 
             this.B_btn_A.ForeColor = System.Drawing.Color.OrangeRed;
-            this.B_btn_A.Location = new System.Drawing.Point(6, 504);
+            this.B_btn_A.Location = new System.Drawing.Point(6, 525);
             this.B_btn_A.Name = "B_btn_A";
             this.B_btn_A.Size = new System.Drawing.Size(40, 23);
             this.B_btn_A.TabIndex = 30;
@@ -700,7 +754,7 @@
             // B_btn_copy
             // 
             this.B_btn_copy.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.B_btn_copy.Location = new System.Drawing.Point(74, 504);
+            this.B_btn_copy.Location = new System.Drawing.Point(74, 525);
             this.B_btn_copy.Name = "B_btn_copy";
             this.B_btn_copy.Size = new System.Drawing.Size(75, 23);
             this.B_btn_copy.TabIndex = 9;
@@ -711,7 +765,7 @@
             // B_btn_clean
             // 
             this.B_btn_clean.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.B_btn_clean.Location = new System.Drawing.Point(155, 504);
+            this.B_btn_clean.Location = new System.Drawing.Point(155, 525);
             this.B_btn_clean.Name = "B_btn_clean";
             this.B_btn_clean.Size = new System.Drawing.Size(75, 23);
             this.B_btn_clean.TabIndex = 8;
@@ -719,21 +773,46 @@
             this.B_btn_clean.UseVisualStyleBackColor = true;
             this.B_btn_clean.Click += new System.EventHandler(this.B_btn_clean_Click);
             // 
-            // A_btn_paste
+            // timer1
             // 
-            this.A_btn_paste.Location = new System.Drawing.Point(77, 504);
-            this.A_btn_paste.Name = "A_btn_paste";
-            this.A_btn_paste.Size = new System.Drawing.Size(75, 23);
-            this.A_btn_paste.TabIndex = 30;
-            this.A_btn_paste.Text = "Pegar";
-            this.A_btn_paste.UseVisualStyleBackColor = true;
-            this.A_btn_paste.Click += new System.EventHandler(this.A_btn_paste_Click);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // A_NDD_Rango
+            // 
+            this.A_NDD_Rango.Location = new System.Drawing.Point(13, 72);
+            this.A_NDD_Rango.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.A_NDD_Rango.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.A_NDD_Rango.Name = "A_NDD_Rango";
+            this.A_NDD_Rango.Size = new System.Drawing.Size(108, 20);
+            this.A_NDD_Rango.TabIndex = 4;
+            this.A_NDD_Rango.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(10, 56);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(113, 13);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Rango de carcácteres";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 577);
+            this.ClientSize = new System.Drawing.Size(1159, 596);
             this.Controls.Add(this.tab_parrafo);
             this.Controls.Add(this.cb_Explain);
             this.Controls.Add(this.label14);
@@ -769,6 +848,7 @@
             this.tabPageA.PerformLayout();
             this.tabPageB.ResumeLayout(false);
             this.tabPageB.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.A_NDD_Rango)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -830,6 +910,12 @@
         private System.Windows.Forms.Button A_btn_B;
         private System.Windows.Forms.Button B_btn_A;
         private System.Windows.Forms.Button A_btn_paste;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label A_lb_column;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.CheckBox A_CB_Remove;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.NumericUpDown A_NDD_Rango;
     }
 }
 

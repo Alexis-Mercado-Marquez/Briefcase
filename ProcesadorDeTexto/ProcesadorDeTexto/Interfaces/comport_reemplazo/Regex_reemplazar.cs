@@ -10,8 +10,14 @@ namespace ProcesadorDeTexto.Interfaces.comport_reemplazo
             var patron = frm1.DISTINGUIR
                 ? @"(?<first>\b|\W)(" + palabras[0] + @")(?<second>\W)" 
                 : @"(?i)(?<first>\b|\W)(" + palabras[0] + @")(?<second>\W)";
+            
             var match = Regex.Match(cadena, patron);
-            if (!match.Success) { throw new Exception(); }
+            if (!match.Success) 
+            {
+                if (frm1.ELIMINAR) return ""; //Si esta marcado el cb, elimina la fila
+                else throw new Exception();
+            }
+            //if (!match.Success) throw new Exception(); //Original
             return Regex.Replace(cadena, patron, "${first}" + palabras[1] + "${second}") + "\n";
         }
     }

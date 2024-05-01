@@ -9,7 +9,11 @@ namespace ProcesadorDeTexto.Interfaces.comport_reemplazo
         {   //Usa un Regex para buscar la cadena {con (?i) distingue mayúsculas de minúsculas}
             var patron = frm1.DISTINGUIR ? palabras[0] : @"(?i)" + palabras[0];
             var match = Regex.Match(cadena, patron);
-            if (!match.Success) { throw new Exception(); }
+            if (!match.Success)
+            {
+                if (frm1.ELIMINAR) return ""; //Si esta marcado el cb, elimina la fila
+                else throw new Exception();
+            }
             return Regex.Replace(cadena, patron, palabras[1]) + "\n";
         }
     }

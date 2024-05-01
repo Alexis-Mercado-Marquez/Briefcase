@@ -20,7 +20,9 @@ namespace ProcesadorDeTexto
         public int CONTADOR; //Toma el valor de B_NDD_Inicio
         public int INCREMENTO; //Toma el valor de B_NDD_Increm
         public string OBJ_BUSCADO; //Toma el valor de los controles A
+        public string RANGO; //Toma el valor de A_NDD_Rango
         public bool ULTIMA; //Toma el valor de A_CB_Ultima
+        public bool ELIMINAR; //Toma el valor de A_CB_Remove
         public bool DISTINGUIR; //Toma el valor de A_CB_Mayus
         public Stack<string> LISTA; //Toma el valor de textBox3
         #endregion
@@ -40,6 +42,8 @@ namespace ProcesadorDeTexto
             cb_AditionalAction.SelectedIndex = 0;
             cb_AditionalAction2.SelectedIndex = 0;
             activar_tercer_caja(false);
+
+            timer1.Start();
         }
 
         #region BOTONES
@@ -102,6 +106,7 @@ namespace ProcesadorDeTexto
             if (tab_reemplazable.SelectedTab == tabPage1)
             {   //Guarda el texto a buscar y si debe distinguir mayusculas de minusculas
                 OBJ_BUSCADO = Regex.Replace(A_TB_Cadena.Text, @"[^\w\d\s]", @"\$&");
+                ELIMINAR = A_CB_Remove.Checked; 
                 DISTINGUIR = A_CB_Mayus.Checked;
 
                 if (A_CB_Cadenas.SelectedIndex == 0)
@@ -115,6 +120,7 @@ namespace ProcesadorDeTexto
             else if (tab_reemplazable.SelectedTab == tabPage2)
             {   //Se buscará el texto de la columna indicada
                 OBJ_BUSCADO = A_NDD_Columna.Value.ToString();
+                RANGO = A_NDD_Rango.Value.ToString();
                 ULTIMA = A_CB_Ultima.Checked;
 
                 proc2.Como_reemplazar_datos(new Reemplazo.Quitar_Poner());
@@ -151,9 +157,6 @@ namespace ProcesadorDeTexto
                 try
                 {
                     if (cadena == "\r") { throw new Exception(); }
-                    if (ULTIMA == true) { 
-                        OBJ_BUSCADO = (cadena.Length - 1).ToString();
-                    }
                     texto += proc1.Leer_datos(this, proc2, cadena);
                 }
                 catch { texto += cadena + "\n"; }
@@ -162,12 +165,14 @@ namespace ProcesadorDeTexto
             #region Ordenar
             int orden = cb_AditionalAction2.SelectedIndex;
             if (orden == 0) return texto;
+            if (orden == 1) return texto.Replace("\r\n","");
 
             //Si se escogio ordenar el texto, se separa por filas
             string[] lineas = texto.Split('\n');
+            Array.Sort(lineas);
 
-            Array.Sort(lineas); //El orden 2 es descendente
-            if (orden == 2) Array.Reverse(lineas);
+            //El orden 3 es descendente
+            if (orden == 3) Array.Reverse(lineas);
 
             return string.Join("\n", lineas);
             #endregion
@@ -235,11 +240,6 @@ namespace ProcesadorDeTexto
         #endregion
 
         #region CHECAR RADIO/CHECK BUTTONS
-        private void A_CB_Ultima_CheckedChanged(object sender, EventArgs e)
-        {   //Activa o desactiva el input izquierdo en función de su estado
-            A_NDD_Columna.Enabled = !A_CB_Ultima.Checked;
-        }
-
         private void rdInsertBefore_CheckedChanged(object sender, EventArgs e)
         {
             ACCION = "insertar_antes";
@@ -268,6 +268,7 @@ namespace ProcesadorDeTexto
         {
             ACCION = "borrar";
             btn_replace.Text = "Eliminar";
+            tab_reemplazo.SelectedIndex = 0;
             mostrar_tablon(false);
         }
 
@@ -303,11 +304,22 @@ namespace ProcesadorDeTexto
                         " Al escoger la opción 'solo palabras completas', buscará solo cadenas que tengan" +
                         " un simbolo (como un punto) o espacios a ambos lados.");
                     break;
-                case "Buscar texto (columnas x filas)":
+                case "Buscar texto (por columna)":
                     MessageBox.Show("Si esta es la pestaña seleccionada, en cada fila se cambiara la" +
                         " misma columna. Las columnas se corresponden al número que ocupa un carácter en" +
-                        " una fila; por ejemplo, 'e' ocupa la columna 3 en 'Alexis'. Si se marca la opción" +
-                        " del checkbox, se buscara siempre la última columna en la fila.");
+                        " una fila; por ejemplo, 'e' ocupa la columna 3 en 'Alexis'.");
+                    break;
+                case "Buscar por cadena (avanzado)":
+                    MessageBox.Show("Con el segundo select puede decidir si elimina las filas donde no se" + 
+                        " encuentre la cadena o aquellas en las que este. Además, puede marcar el checkbox" +
+                        " para buscar solo las cadenas cuyas letras sean exacttamente las mismas (que las)" +
+                        " mayúsculas y minúsculas coincidan.");
+                    break;
+                case "Buscar por columna (avanzado)":
+                    MessageBox.Show("Con la segunda caja de texto puede definir un rango, que empieza en la" +
+                        "posición indicada en el número 1 y acaba en aquella igual a la suma de ambos. La acción" +
+                        "escogida (con los 'radioButton') cambia con este. Por ejemplo, 'Eliminar texto' elimina" +
+                        "todo el rango de carácteres e 'Insertar txt después' agrega la cadena al final del mismo.");
                     break;
                 case "Acciones de los RadioButtons":
                     MessageBox.Show("Determinan que se hace al encontrar la cadena/columna. Ejemplo donde" +
@@ -376,32 +388,32 @@ namespace ProcesadorDeTexto
                 A_CB_Ultima.Checked = ULTIMA = false;
             }
         }
+
+        private void textBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            int line = textBox1.GetLineFromCharIndex(textBox1.SelectionStart);
+            int column = textBox1.SelectionStart - textBox1.GetFirstCharIndexFromLine(line) + 1;
+            A_lb_column.Text = "Fila: " + (line + 1).ToString() + "  Columna: " + column.ToString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int line = textBox1.GetLineFromCharIndex(textBox1.SelectionStart);
+            int column = textBox1.SelectionStart - textBox1.GetFirstCharIndexFromLine(line) + 1;
+            A_lb_column.Text = "Fila: " + (line + 1).ToString() + "  Columna: " + column.ToString();
+        }
         #endregion
 
         #region IDEAS Y ERRORES
-        /* Poder reemplazar el texto con un salto de línea
-         * Añadir una pantalla o ícono de carga mientras se procesa el texto.
-         * Desplegar un mensaje cuando no se inserta texto en el textBox1
-         * Colorear el texto cambiado (con color AZUL)
-         * Agregar un botón para pegar tu texto en la primera pestaña
-         * Añadir los espacios en blanco que falten para insertar texto en la columna indicada
-         */
-        #endregion
-
-        #region SIN USO
-        private void label3_Click(object sender, EventArgs e) { }
-
-        private void label6_Click(object sender, EventArgs e) { }
-
-        private void A_CB_Mayus_CheckedChanged(object sender, EventArgs e) { }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e) { }
-
-        private void label13_Click(object sender, EventArgs e) { }
-
-        private void label5_Click(object sender, EventArgs e) { }
-
-        private void tab_reemplazo_TabIndexChanged(object sender, EventArgs e) { }
+        //ACTUAL: Reemplazar rangos de carácteres
+        //ACTUAL: Eliminar filas con coincidencias (convertir el checkbox {pestaña "Cadenas"} en un select)
+        //  *Considerar invertir el string al editar y devolverlo a la normalidad después, en vez de recorrerlo en reversa
+        //Agregar un ícono bonito a la ventana de la aplicación
+        //Evitar que una palabra en minúsculas se convierta a mayúsculas y viceversa al desmarcar la casilla A_CB_Mayus
+        //Dar la opción de reemplazar solo la primera coincidencia de una línea
+        //Comprobar si puedo convertir TextBox en RichTextBox
+        //Colorear de un color distinto las líneas cambiadas
+        //Actualizar las explicaciones del select
         #endregion
     }
 }

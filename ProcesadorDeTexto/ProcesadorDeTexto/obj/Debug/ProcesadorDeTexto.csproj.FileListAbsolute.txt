@@ -27,14 +27,15 @@ C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTex
 C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.CoreCompileInputs.cache
 C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.exe
 C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.pdb
-C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csprojAssemblyReference.cache
-C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.exe.config
-C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.exe
-C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.pdb
-C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csprojAssemblyReference.cache
-C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.Form1.resources
-C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.Properties.Resources.resources
-C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.GenerateResource.cache
-C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.CoreCompileInputs.cache
-C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.exe
-C:\Users\Acel Guilts\Documents\Visual Studio 2017\Projects\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.pdb
+C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.AssemblyReference.cache
+C:\DATA\Proyectos\Personales\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.SuggestedBindingRedirects.cache
+C:\Users\alexi\Documentos\Visual Studio 2022\Proyectos viejos\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.exe.config
+C:\Users\alexi\Documentos\Visual Studio 2022\Proyectos viejos\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.exe
+C:\Users\alexi\Documentos\Visual Studio 2022\Proyectos viejos\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\bin\Debug\ProcesadorDeTexto.pdb
+C:\Users\alexi\Documentos\Visual Studio 2022\Proyectos viejos\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.AssemblyReference.cache
+C:\Users\alexi\Documentos\Visual Studio 2022\Proyectos viejos\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.Form1.resources
+C:\Users\alexi\Documentos\Visual Studio 2022\Proyectos viejos\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.Properties.Resources.resources
+C:\Users\alexi\Documentos\Visual Studio 2022\Proyectos viejos\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.GenerateResource.cache
+C:\Users\alexi\Documentos\Visual Studio 2022\Proyectos viejos\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.csproj.CoreCompileInputs.cache
+C:\Users\alexi\Documentos\Visual Studio 2022\Proyectos viejos\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.exe
+C:\Users\alexi\Documentos\Visual Studio 2022\Proyectos viejos\ProcesadorDeTexto\ProcesadorDeTexto\ProcesadorDeTexto\obj\Debug\ProcesadorDeTexto.pdb
